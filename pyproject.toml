@@ -5,9 +5,9 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "mnist_cooky"
 version = "0.0.1"
-description = "A short description of the project."
+description = "Training project for DTU\u0027s MLOPs course"
 authors = [
-  { name = "jasekii", email = "your@email.com" },
+  { name = "Jacob", email = "your@email.com" },
 ]
 
 keywords = ["machine learning", "MLOps"]
@@ -26,7 +26,12 @@ dependencies = {file = ["requirements.txt"]}
 dev = {file = ['requirements_dev.txt']}
 
 [tool.ruff]
+lint.select = ["I"]
 line-length = 120
+
+[project.scripts]
+train = "mnist_cooky.train:train"
+evaluate = "mnist_cooky.evaluate:app"
 
 [tool.coverage.run]
 omit = ["tests/*"]

@@ -14,8 +14,8 @@ COPY data/ data/
 COPY models/ models/
 COPY reports/figures/ reports/figures
 
-#RUN --mount=type=cache,target=/root/.cache/pip pip install -r requirements.txt
-RUN pip install -r requirements.txt --no-cache-dir --verbose
+RUN --mount=type=cache,target=/root/.cache/pip pip install -r requirements.txt
+#RUN pip install -r requirements.txt --no-cache-dir --verbose
 RUN pip install . --no-deps --no-cache-dir --verbose
 
-ENTRYPOINT ["python", "-u", "src/mnist_cooky/train.py"]
+ENTRYPOINT ["python", "-u", "src/mnist_cooky/evaluate.py"]
